@@ -1,0 +1,33 @@
+Source change represented by patch_mgba.py for the validated arm64 binary.
+Upstream source https://github.com/mgba-emu/mgba/blob/0.10.5/src/script/socket.c
+Original source copyright Jeffrey Pfau, Mozilla Public License 2.0.
+
+--- a/src/script/socket.c
++++ b/src/script/socket.c
+@@
+ void _mScriptSocketClose(struct mScriptSocket* ssock) {
+     if (!SOCKET_FAILED(ssock->socket)) {
+-        SocketClose(ssock->socket);
++        Socket descriptor = ssock->socket;
++        ssock->socket = INVALID_SOCKET;
++        SocketClose(descriptor);
+     }
+ }
+
+The binary form sets INVALID_SOCKET immediately before close(fd). Both the
+explicit close call and the userdata destructor then preserve idempotency.
+
+--- a/src/script/socket.c
++++ b/src/script/socket.c
+@@
+-    if (bytes <= 0) {
++    if (bytes < 0) {
+         data->size = 0;
+         _mScriptSocketSetError(ssock, SocketError());
+     } else {
+         data->size = bytes;
+         ssock->error = mSCRIPT_SOCKERR_OK;
+     }
+
+A zero-length receive represents EOF and clears stale errno-derived errors.
+Both exported and compiler-inlined binding implementations are checked.

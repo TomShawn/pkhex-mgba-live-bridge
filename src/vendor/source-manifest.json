@@ -1,0 +1,8 @@
+{
+  "PKHeX.Core.original.dll": "2bedb41941d60949b835d8cadf1830761d9ecd3311f2f516e0f0f669d2319487",
+  "Mono.Cecil.dll": "831dca77470d85cb6ffbea3072daa7a3df5b7c9fcfd9c3f43674a9be99d4bfcf",
+  "bundle.json": "e193575dfa58c4e12a0bba4b6be31fa05a9b3bbfeec0b39ca11a0343692d7091",
+  "original.deps.json": "36202072fedd34baa41af0a5b498f3fe8fb2a1127d48703a0c19cbf9431b3294",
+  "PKHeX中文兼容-base.app/Contents/MacOS/PKHeX.Avalonia": "8b45b9cfc1b431dcea49b1735fa17e8a59a898021d25d38551194746f8ab8d5a",
+  "mGBA-0.10.5-base.app/Contents/MacOS/mGBA": "6dd01203befb1f0826af3550ba2e9b1dcfc8371b589d96c27f978c28322eb014"
+}

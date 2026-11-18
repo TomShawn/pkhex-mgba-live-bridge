@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <AssemblyName>PKHeX.GbaBridge</AssemblyName>
+    <Version>1.0.0</Version>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  <ItemGroup Condition="Exists('vendor/refs/Avalonia.dll')">
+    <Reference Include="vendor/refs/Avalonia*.dll"><Private>false</Private></Reference>
+  </ItemGroup>
+  <ItemGroup Condition="!Exists('vendor/refs/Avalonia.dll')">
+    <PackageReference Include="Avalonia" Version="12.1.4" PrivateAssets="all" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove=".build/**/*.cs;tools/**/*.cs;tests/**/*.cs;builds/**/*.cs;upstream/**/*.cs" />
+  </ItemGroup>
+</Project>

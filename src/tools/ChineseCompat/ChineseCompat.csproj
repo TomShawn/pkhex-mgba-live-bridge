@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <AssemblyName>PKHeX.ChineseCompat</AssemblyName>
+    <Version>1.0.0</Version>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  <ItemGroup Condition="Exists('../../vendor/PKHeX.Core.original.dll')">
+    <Reference Include="PKHeX.Core">
+      <HintPath>../../vendor/PKHeX.Core.original.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup Condition="!Exists('../../vendor/PKHeX.Core.original.dll') and Exists('../../upstream/PKHeX-Avalonia/PKHeX.Core/PKHeX.Core.csproj')">
+    <ProjectReference Include="../../upstream/PKHeX-Avalonia/PKHeX.Core/PKHeX.Core.csproj" Private="false" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ChineseMap.tsv" LogicalName="ChineseMap.tsv" />
+  </ItemGroup>
+</Project>

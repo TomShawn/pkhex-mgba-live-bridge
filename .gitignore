@@ -1,0 +1,46 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# ROMs, saves, savestates, and local backups (Never commit copyrighted ROMs or personal saves)
+*.gba
+*.sav
+*.ss[0-9]
+*.ss
+*.tmp
+backups/
+存档备份/
+.runtime/
+.coord-before/
+.repair-before/
+
+# Python virtual environments and caches
+__pycache__/
+*.py[cod]
+.test-venv/
+.venv/
+venv/
+
+# .NET build outputs and local SDK
+bin/
+obj/
+*.user
+*.suo
+src/.build/
+src/.test-runtime/
+src/.tools/
+src/builds/
+
+# Fetched upstream source trees (fetched and verified via src/tools/fetch_sources.py)
+src/upstream/PKHeX-Avalonia/
+src/upstream/mgba/
+src/upstream/references/
+src/upstream/.fetch-*/
+src/upstream/.previous-*/
+
+# Large local base apps and binary assemblies in src/vendor/
+src/vendor/*.app/
+src/vendor/refs/
+src/vendor/PKHeX.Core.original.dll

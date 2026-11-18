@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="../../BridgeEngine.cs" Link="BridgeEngine.cs" />
+    <Compile Include="../../SaveCommitCoordinator.cs" Link="SaveCommitCoordinator.cs" />
+    <Compile Include="../../NativeDiscovery.cs" Link="NativeDiscovery.cs" />
+  </ItemGroup>
+  <ItemGroup><Compile Include="../../LiveMerge.cs" Link="LiveMerge.cs" /></ItemGroup>
+  <ItemGroup><Compile Include="../../LiveWorkspace.cs" Link="LiveWorkspace.cs" /></ItemGroup>
+</Project>
